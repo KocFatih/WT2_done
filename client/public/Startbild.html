@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+	<script src='https://unpkg.com/babel-standalone@6/babel.min.js'></script>
+	<link href="WT2_Design.css" type="text/css" rel="stylesheet"/>
+
+</head>
+<body>
+
+	<div id='HomePage'></div>
+	
+	<script type = 'text/babel'>
+        
+	//Stundenplan
+		class Stundenplan extends React.Component{
+
+			constructor(probs){
+				super(probs);
+			}
+			
+			geklickt(){   //Eventhandler
+				window.location.href="Stundenplan/Stundenplan.html"
+			}
+			
+			render(){
+				return (
+						<div>   
+							<button id="button-Stundenplan" onClick={this.geklickt.bind(this)}>Stundenplan</button>
+						</div>
+					);
+			}
+		}
+
+
+	//Lernraeume
+		class Lernraeume extends React.Component{
+
+			constructor(probs){
+				super(probs);
+			}
+			
+			geklickt(){   //Eventhandler
+				window.location.href="/Lernraeume/Lernraeume.html"
+			}
+			
+			render(){
+				return (
+						<div>   
+							<button id="button-Lernraeume" onClick={this.geklickt.bind(this)}>Lernräume</button>
+						</div>
+					);
+			}
+		}
+
+	//Prof_Bereich
+		class Prof_Bereich extends React.Component{
+
+			constructor(probs){
+				super(probs);
+			}
+			
+			geklickt(){   //Eventhandler
+				window.location.href="Prof_Bereich/Prof_Bereich.html"
+			}
+			
+			render(){
+				return (
+						<div>   
+							<button id="button-Prof_Bereich" onClick={this.geklickt.bind(this)}>Prof Bereich</button>
+						</div>
+					);
+			}
+		}
+
+	//Ausfall
+		class Ausfall extends React.Component{
+
+			constructor(probs){
+				super(probs);
+			}
+			
+			geklickt(){   //Eventhandler
+				window.location.href="Ausfall/Ausfall.html"
+			}
+			
+			render(){
+				return (
+						<div>   
+							<button id="button-Ausfall" onClick={this.geklickt.bind(this)}>Ausfall</button>
+						</div>
+					);
+			}
+		}
+
+	//Allgemein
+		function Img(props){
+			return <img src= {props.imag}/>
+		}
+
+
+		function Startbild(){
+			return (
+				<div id='Startbild'>
+					<Img imag= {'bilder/BOLogo.png'}/>,
+					<Stundenplan />
+					<Lernraeume />
+					<Prof_Bereich />
+					<Ausfall />
+				</div>
+			);
+		}
+
+
+		ReactDOM.render(
+			<Startbild />,
+			document.getElementById('HomePage')
+		)
+		 
+	</script>
+</body>	
+</html>

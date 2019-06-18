@@ -1,0 +1,52 @@
+
+  
+    
+    .elements {
+      float: left;
+      margin-left: 0px;
+      margin-top: 0px;
+    }
+ 
+    
+    .neutral {
+      margin: 10px 0 0 10px;
+      width:100%;
+      float: left;  
+    }
+
+    .logedIn {
+      visibility: hidden;
+    }
+
+    .fail {
+      background-color: red;
+      float: left;
+      margin-left: 0px;
+      margin-top: 0px;
+      display: none;
+    }
+
+    .notFailed {
+      visibility: hidden;
+    }
+
+    .logoutScreen1 {
+      display: none;
+    }
+    .logoutScreen2 {
+      display: none;
+    }
+
+    .logoutScreen {
+      display: none;
+    }
+
+    .logoutScreenEnabled {
+      display: block;
+      margin: 20px 0px 0 0px;
+    }
+
+    a {
+      font-size: 150%;
+      font-weight: 700;
+    }

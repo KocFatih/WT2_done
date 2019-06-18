@@ -1,0 +1,62 @@
+/*@import 'flat-ui/colors'
+@import 'styles/colors'*/
+
+.select{
+  background:#DBD7CB;
+  padding-top: 2.4em;
+  padding-bottom: 0.5em;
+  height: 4.5em;
+  /*position: center;*/
+  top: 2.4em;
+  /*z-index: 9999 !important*/
+}
+/*
+.links{
+  color: red;
+  border-radius: 4px;
+  &:focus, &:active, &:visited
+    background: transparent
+    color: white
+  &:hover
+    background: $base-dark-blue
+    color: $base-light-blue
+  &.active
+    background: $base-light-blue
+    color: white
+}
+
+.links:focus{
+
+}*/
+
+ul, li
+{
+    list-style: none;
+}
+
+.heading{
+  color: #DA244A;
+}
+
+.select-box--box{
+  left: 16%;
+}
+
+#login{
+  color: #DA244A;
+  position: absolute;
+  right: 3em;
+  top: 0em;
+}
+
+#button{
+  position: absolute;
+  left: 26%;
+  top: 2.4em;
+}
+
+#logo{
+  position: absolute;
+  left: 0em;
+  top: 0em;
+}
