@@ -7,5 +7,5 @@ Person5 = Fatih => Überall<br/>
 <br/>
 Im Code sind auch die entsprechenden stellen mit Namen versehen<br/>
 <br/>
-# npm Module(Server u. Client) wurden aufgrund hoher Anzahl an Dateien nicht mit hochgeladen.
+# npm Module(Server u. Client) wurden aufgrund hoher Anzahl an Dateien nicht mit hochgeladen. Bei fragen zu den zusätzlichen Packeten, bitte melden.
 
