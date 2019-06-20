@@ -1,5 +1,5 @@
 # Unbedingt lesen von Gruppe 4:
-Person1 = Sarah => Front (Navigation + Progressbar)
+Person1 = Sarah => Front (Navigation + Progressbar)<br/>
 Person2 = Jan => Front(Table) + Back(db)
 Person3 = Julia => Back + Anbindung
 Person4 = Andre => Back + Anbindung
