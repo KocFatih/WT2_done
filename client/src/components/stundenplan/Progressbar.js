@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+//Sarah
 class Progressbar extends Component {
 
     render() { 

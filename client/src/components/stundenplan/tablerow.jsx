@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './all.css';
 
 
-
+//---Person 2--------
 class TableRow extends Component {
 
 

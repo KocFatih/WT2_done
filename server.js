@@ -3,6 +3,10 @@
 var express = require('express')
 var app = express()
 const mongoose = require('mongoose');
+
+
+
+//---Jan------
 var User = require('./modules/user');//Tabellen erzeugung
 var Feacher = require('./modules/feacher');//Tabellen erzeugung
 var SemesterGruppe = require('./modules/semesterGruppe');//Tabellen erzeugung
@@ -12,32 +16,13 @@ mongoose.connect(database, {useNewUrlParser: true})
 .then(()=> console.log('DB connected'))
 .catch(err => console.log(err))
 
-/*  //Umgang mit Schema
-var Schema = mongoose.Schema;//referenz aufs Schema Object in mongoose
-
-var userDataSchema = new Schema({//das ist jetzt nur ein Schema der Tabelle. Ein JSON-Objekt wird dem Konstructor des Schemas geschickt.
-  title: {type: String, required: true}, //jetzt ist es erforderlich das ein title angegeben wird. Also Not NULL
-  content: String, //man kann so ganz einfach typ angaben machen.
-  author: String,  //sind aber spezielle bedingungen nötig, so muss man diese per {} zu js umwandeln.
-
-}, {});
-
-var UserData = mongoose.model('UserData', userDataSchema);//hiermit wird jetzt die richtige Tabelle(Collection) erzeugt! Hiermit kann man jetzt DatenObjekte erzeugen, und auch hier in UserData reinspeichern.Diese werden auto ins DB übertragen.
-
-//innerhalb der MW
-var data = new UserData({title: 'blabla'});
-data.save().then(() => console.log('This is done!'));
-
-*/
-
-
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 var user; //eingeloggte benutzer wird eingebunden
 
 
-
+//---Julia---------
 //Go Home
 app.get('/default', function (req, res, next) {
 
@@ -49,7 +34,7 @@ app.get('/default', function (req, res, next) {
 })
 
 
-
+//---------Andre---------
 app.patch('/safeChanges/', function (req, res, next) {
 
   console.log(req.body)
@@ -71,7 +56,7 @@ app.patch('/safeChanges/:id', function (req, res) {
 
 
 
-
+//-------Andre----------
 app.post('/defaultPlan', async function (req, res, next) {
   
   var query  = SemesterGruppe.where({ sid: req.body.id});
@@ -96,7 +81,7 @@ app.post('/defaultPlan', async function (req, res, next) {
   
 })
 
-
+//---Julia-----
 app.post('/login', async function (req, res, next) {
 
   
@@ -120,6 +105,9 @@ app.post('/login', async function (req, res, next) {
   res.json(user);
 })
 
+
+
+//-----Jan------
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
     console.log('Server is running on PORT:',PORT);
@@ -129,7 +117,7 @@ app.listen(PORT, () => {
 
 
 
-//--------Test/Weggeworfen/Daten-Müll------------------
+//--------Serverseitige Test/Weggeworfen/Daten-Müll die im laufe der Versuche entstanden sind------------------
   //var feacher = new Feacher({fid: '0', bezeichnung: '-', time: null})
   //var feacher = new Feacher({fid: '1', bezeichnung: 'Java 2', time: [{day: '1', hour: '1'},{day: '1', hour: '2'},{day: '1', hour: '3'},{day: '1', hour: '4'},{day: '1', hour: '5'},{day: '1', hour: '6'},{day: '1', hour: '7'},{day: '1', hour: '8'},{day: '1', hour: '9'},{day: '1', hour: '10'},{day: '1', hour: '11'},,{day: '1', hour: '12'}], user: null, semesterGruppe: null});
   //var feacher = new Feacher({fid: '2', bezeichnung: 'Elektrotechnik', time: [{day: '2', hour: '1'},{day: '2', hour: '2'},{day: '2', hour: '3'},{day: '2', hour: '4'},{day: '2', hour: '5'},{day: '2', hour: '6'},{day: '2', hour: '7'},{day: '2', hour: '8'},{day: '2', hour: '9'},{day: '2', hour: '10'},{day: '2', hour: '11'},,{day: '2', hour: '12'}], user: null, semesterGruppe: null});
@@ -143,6 +131,26 @@ app.listen(PORT, () => {
 
   //var user = new User({email: 'test@hs-bochum.de', password: '654321'});
   //user.save().then(() => console.log('This is done!')).catch(err => console.log(err));
+
+
+  /*  //Umgang mit Schema
+  var Schema = mongoose.Schema;//referenz aufs Schema Object in mongoose
+
+  var userDataSchema = new Schema({//das ist jetzt nur ein Schema der Tabelle. Ein JSON-Objekt wird dem Konstructor des Schemas geschickt.
+    title: {type: String, required: true}, //jetzt ist es erforderlich das ein title angegeben wird. Also Not NULL
+    content: String, //man kann so ganz einfach typ angaben machen.
+    author: String,  //sind aber spezielle bedingungen nötig, so muss man diese per {} zu js umwandeln.
+
+  }, {});
+
+  var UserData = mongoose.model('UserData', userDataSchema);//hiermit wird jetzt die richtige Tabelle(Collection) erzeugt! Hiermit kann man jetzt DatenObjekte erzeugen, und auch hier in UserData reinspeichern.Diese werden auto ins DB übertragen.
+
+  //innerhalb der MW
+  var data = new UserData({title: 'blabla'});
+  data.save().then(() => console.log('This is done!'));
+
+*/
+
   /*
   SemesterGruppe.findOneAndUpdate({sid: 2}, {$set:{feacher: [[{id: 4},{id: 5},{id: 3},{id: 0},{id: 5},{id: 2},{id: 0},{id: 0},{id: 1},{id: 3},{id: 2},{id: 0}],[{id: 0},{id: 4},{id: 2},{id: 0},{id: 5},{id: 5},{id: 4},{id: 4},{id: 2},{id: 2},{id: 5},{id: 5}],[{id: 1},{id: 1},{id: 2},{id: 1},{id: 3},{id: 2},{id: 0},{id: 3},{id: 0},{id: 4},{id: 5},{id: 4}],[{id: 4},{id: 0},{id: 5},{id: 3},{id: 3},{id: 2},{id: 1},{id: 2},{id: 0},{id: 1},{id: 3},{id: 3}],[{id: 5},{id: 4},{id: 3},{id: 0},{id: 0},{id: 2},{id: 3},{id: 0},{id: 0},{id: 3},{id: 3},{id: 0}]] }}, {new: true}, (err, doc) =>{
     if (err) {

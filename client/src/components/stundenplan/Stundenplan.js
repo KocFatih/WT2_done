@@ -7,6 +7,8 @@ import Navigation from './features/Navigation/Navigation';
 import Progressbar from './Progressbar';
 
 
+
+//----unbedingt auch die readme lesen------
 class Stundenplan extends Component {
   state = {
     feacher: [//für die verschiedenen zur auswahl stehenden Fächer. Dummy Daten die eigentlich übers componentWillMount eingebunden werden.
@@ -107,7 +109,7 @@ class Stundenplan extends Component {
   };
 
 
-
+  //----Fatih-------
   componentWillMount() {
     //console.log(this.state.feacher)
     fetch('/default')
@@ -116,12 +118,13 @@ class Stundenplan extends Component {
     //.then(feacher => this.setState({feacher}, () => console.log('Customers fetched...', this.state.feacher)));
   }
 
-
+  //---Jan---------
   //anpassen des Persönlichen Profiles
   handleProfile = (day, hour, id) => {          //day=0-4 hour=0-11
     this.state.Profil[day][hour] = id
   };
 
+  //-----Andre-----
   //  Profile->DB
   handleSafeChanges = () => {
     console.log(this.state.Profil);
@@ -150,6 +153,7 @@ class Stundenplan extends Component {
     else{console.log("not logged in")};
   }
 
+  //----Julia------
   //userdaten auf tabelle führen
   loadPlan_fromUser = (plan) => {
       
@@ -181,6 +185,8 @@ class Stundenplan extends Component {
       this.setState(freitag);
 
   }
+
+  //----Andre-------
   //default daten auf tabelle führen
   loadPlan_fromDefault = (plan) => {  
     console.log(plan);
@@ -226,6 +232,7 @@ class Stundenplan extends Component {
 
   }
 
+  //--Andre---------
   handleDefaultPlan = (id) => {
     //console.log(id)   
     
@@ -258,7 +265,7 @@ class Stundenplan extends Component {
     
   }
 
-
+  //---Julia----------
   handleLogin = (email, password) => {
     console.log("login versuch");  
 
@@ -295,11 +302,6 @@ class Stundenplan extends Component {
         this.setState({Benutzer: benutzer});
         this.setState({LoggedIn: true})
 
-        //var montag= {stunde:[{fach:'-', id: '0'}]};
-
-        //console.log(this.state.montag[0].stunde[1] = '')
-        //this.setState({montag: montag});
-        //console.log(this.state.Benutzer);
         
         //user-profil befüllen:
         console.log(content.userPlan);
@@ -319,6 +321,7 @@ class Stundenplan extends Component {
     
   }
 
+  //---Sarah---
   progressIncrease = () => {
     /* zum abspeichern fürs benutzer für spätere Zwecke
     var benutzer = this.state.Benutzer;
@@ -352,18 +355,19 @@ class Stundenplan extends Component {
     
     return (
       <React.Fragment>
-        <Navigation           
+        <Navigation        //------Sarah-----------   
           onChange={(e) => this.props.handleDefaultPlan(e.target.value)} //ref
           handleDefaultPlan = {this.handleDefaultPlan} //ref
           style ={{position: "absolute", left: "10em"}}
-          name ="venue[country_id]"
+          //name ="venue[country_id]"
           feacher = {this.state.feacher}
           handleSafeChanges = {this.handleSafeChanges} //ref
           handleLogin = {this.handleLogin}
           ref="child" //nötig um parent -> child zugriff durchzuführen
         />
         {/*<button onClick={this.onClick.bind(this)}>Click</button>*/}
-        <Table 
+
+        <Table      //---------Jan---------
           montag={this.state.montag}
           dienstag={this.state.dienstag}
           mittwoch={this.state.mittwoch}
@@ -371,6 +375,8 @@ class Stundenplan extends Component {
           freitag={this.state.freitag}
           handleProfile= {this.handleProfile}
         />
+
+        {/*----Sarah------*/}
         <Progressbar value={this.state.progressValue}/>  {/* beim benutzer value={this.state.Benutzer.lvl[1] für spätere Zwecke*/}
         <Button onClick={this.progressIncrease}>increase</Button>
         

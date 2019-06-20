@@ -2,6 +2,8 @@ import React from 'react';
 import './styles.css'
 import { Button } from 'react-bootstrap';
 
+
+//---Sarah--------
 class Login extends React.PureComponent{
     state = {
         email: null,

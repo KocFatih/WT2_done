@@ -5,7 +5,7 @@ import Login from '../Login/Login';
 import LogoNav from '../Logo/LogoNav';
 import './styles.css'
 
-
+//---Sarah-------
 class Navigation extends React.PureComponent {
 
 
@@ -20,10 +20,10 @@ class Navigation extends React.PureComponent {
             <LogoNav/>
           </li>
           <li>
-              <SelectBox
+              <SelectBox  //----Fatih Koc (Nur die SelectBox)--------
                 onChange={(e) => this.props.handleDefaultPlan(e.target.value)}
                 handleDefaultPlan = {this.props.handleDefaultPlan}
-                name ="venue[country_id]"
+                //name ="venue[country_id]"
                 items = {this.props.feacher}
               />
           </li>

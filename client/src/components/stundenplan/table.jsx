@@ -5,7 +5,7 @@ import './all.css';
 
 
 
-
+//---Person 2-----------
 class Table extends Component {
 
 

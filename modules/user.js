@@ -2,6 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;//referenz aufs Schema Object in mongoose
 var mongooseUniqueValidator = require('mongoose-unique-validator');
 
+
+//---Jan---
 var schema = new Schema({
     firstName: String,
     lastName: String,

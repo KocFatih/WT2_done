@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import kairos from './Kairos.png'
 import './logoNav.css'
 
+
+//-----Sarah---------
 export class LogoNav extends Component {
 
     handleClick = () => {
